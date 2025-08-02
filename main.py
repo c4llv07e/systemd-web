@@ -20,7 +20,7 @@ title = os.getenv("TITLE", "Service monitoring")
 host = os.getenv("HOST", "0.0.0.0")
 port = os.getenv("PORT", "8939")
 subpath = os.getenv("SUBPATH", "/")
-subpath = subpath if subpath[0] == "/" else "/" + subpath
+subpath = (subpath if subpath[0] == "/" else "/" + subpath) + "/" if subpath[-1] != "/" else ""
 
 app = Flask(__name__, static_url_path='')
 
