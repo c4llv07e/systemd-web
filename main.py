@@ -17,6 +17,8 @@ def get_env_or_exit(env):
 
 program_name = get_env_or_exit("SERVICE_NAME")
 title = os.getenv("TITLE", "Service monitoring")
+host = os.getenv("HOST", "0.0.0.0")
+port = os.getenv("PORT", "8939")
 
 app = Flask(__name__, static_url_path='')
 
@@ -44,6 +46,6 @@ def route_root():
 
 if __name__ == '__main__':
     debug = "DEV_MODE" in os.environ
-    app.run(host="0.0.0.0", port="8939", debug=debug)
+    app.run(host=host, port=port, debug=debug)
     pass
 
