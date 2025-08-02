@@ -21,7 +21,6 @@ host = os.getenv("HOST", "0.0.0.0")
 port = os.getenv("PORT", "8939")
 subpath = os.getenv("SUBPATH", "/")
 subpath = subpath if subpath[0] == "/" else "/" + subpath
-print(subpath)
 
 app = Flask(__name__, static_url_path='')
 
